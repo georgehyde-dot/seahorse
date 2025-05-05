@@ -1,0 +1,6 @@
+8020004c B __bss
+8020004c B __bss_end
+8022004c B __stack_top
+80200000 T boot
+80200024 T kernel_main
+8020000e T memset

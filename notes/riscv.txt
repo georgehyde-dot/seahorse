@@ -1,0 +1,15 @@
+lw a0, (a1)  // Read a word (32-bits) from address in a1
+             // and store it in a0. In C, this would be: a0 = *a;
+sw a0, (a1)  // Store a word in a0 to the address in a1.
+             // In C, this would be: *a1 = a0;
+
+ex:
+uint32_t value;
+__asm__ __volatile__("csrr %0, sepc" : "=r"(value));
+
+reads the 'sepc' value from CSR using 'csrr' and assigns it to C usable variable 'value'
+
+__asm__ designates assembly
+__volatile__ turns off compiler optimizations for this instruction
+
+compiler specific syntax not part of C spec.
